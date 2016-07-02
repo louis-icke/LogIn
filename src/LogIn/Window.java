@@ -122,9 +122,10 @@ public class Window extends javax.swing.JFrame {
 
     private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
         String pwd= new String (Password.getPassword());
+        String drive=Drive.getText();
         if (pwd.equals("cat20001")){
             try {
-                Desktop.getDesktop().open(new File("G:\\Main"));
+                Desktop.getDesktop().open(new File(drive + ":\\Main"));
             } catch (IOException ex) {
                 Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
             }
