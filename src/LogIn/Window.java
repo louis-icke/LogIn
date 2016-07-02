@@ -8,9 +8,6 @@ package LogIn;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 
@@ -20,8 +17,10 @@ import org.jasypt.util.password.ConfigurablePasswordEncryptor;
  */
 public class Window extends javax.swing.JFrame {
 
+    private static final long serialVersionUID = 1L;
+
     /**
-     * Creates new form Windeow
+     * Creates new form Window
      */
     public Window() {
         initComponents();
@@ -156,23 +155,18 @@ public class Window extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
+        
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Window().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Window().setVisible(true);
         });
     }
 
