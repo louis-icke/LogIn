@@ -8,6 +8,8 @@ package LogIn;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 
@@ -132,7 +134,7 @@ public class Window extends javax.swing.JFrame {
             try {
                 Desktop.getDesktop().open(new File(drive + ":\\Main"));
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Incorrect drive!", "Error", JOptionPane.INFORMATION_MESSAGE);
+                Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Incorrect password!", "Error", JOptionPane.INFORMATION_MESSAGE);
