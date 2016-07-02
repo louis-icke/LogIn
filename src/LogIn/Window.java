@@ -5,6 +5,14 @@
  */
 package LogIn;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Louis
@@ -32,6 +40,7 @@ public class Window extends javax.swing.JFrame {
         Password = new javax.swing.JPasswordField();
         DriveLabel = new javax.swing.JLabel();
         Drive = new javax.swing.JTextField();
+        LogIn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,17 +49,12 @@ public class Window extends javax.swing.JFrame {
         PasswordLabel.setText("Password");
         PasswordLabel.setVerifyInputWhenFocusTarget(false);
 
-        Password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordActionPerformed(evt);
-            }
-        });
-
         DriveLabel.setText("Drive");
 
-        Drive.addActionListener(new java.awt.event.ActionListener() {
+        LogIn.setText("Log In");
+        LogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DriveActionPerformed(evt);
+                LogInActionPerformed(evt);
             }
         });
 
@@ -59,15 +63,22 @@ public class Window extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PasswordLabel)
-                    .addComponent(DriveLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Drive, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(195, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PasswordLabel)
+                            .addComponent(DriveLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Drive, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 70, Short.MAX_VALUE))
+                            .addComponent(Password)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(LogIn)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,7 +91,9 @@ public class Window extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DriveLabel)
                     .addComponent(Drive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LogIn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Password, PasswordLabel});
@@ -107,13 +120,16 @@ public class Window extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
-        // TODO add your handli
-    }//GEN-LAST:event_PasswordActionPerformed
-
-    private void DriveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DriveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DriveActionPerformed
+    private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
+        String pwd= new String (Password.getPassword());
+        if (pwd.equals("cat20001")){
+            try {
+                Desktop.getDesktop().open(new File("G:\\Main"));
+            } catch (IOException ex) {
+                Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_LogInActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,6 +170,7 @@ public class Window extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Drive;
     private javax.swing.JLabel DriveLabel;
+    private javax.swing.JButton LogIn;
     private javax.swing.JPasswordField Password;
     private javax.swing.JLabel PasswordLabel;
     private javax.swing.JPanel jPanel1;

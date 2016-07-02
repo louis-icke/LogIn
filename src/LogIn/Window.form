@@ -54,17 +54,28 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="PasswordLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="DriveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="Drive" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="70" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="Password" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="LogIn" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="PasswordLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="DriveLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Password" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="Drive" min="-2" pref="20" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="195" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -81,7 +92,9 @@
                       <Component id="DriveLabel" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Drive" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="219" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="LogIn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -94,9 +107,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="Password">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PasswordActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="DriveLabel">
           <Properties>
@@ -104,8 +114,13 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="Drive">
+        </Component>
+        <Component class="javax.swing.JButton" name="LogIn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Log In"/>
+          </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DriveActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogInActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
