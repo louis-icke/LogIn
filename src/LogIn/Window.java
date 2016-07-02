@@ -12,6 +12,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 
 /**
  *
@@ -20,7 +21,7 @@ import javax.swing.JOptionPane;
 public class Window extends javax.swing.JFrame {
 
     /**
-     * Creates new form window
+     * Creates new form Windeow
      */
     public Window() {
         initComponents();
@@ -121,9 +122,14 @@ public class Window extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
-        String pwd= new String (Password.getPassword());
+        String inputPassword= new String (Password.getPassword());
         String drive=Drive.getText();
-        if (pwd.equals("cat20001")){
+        ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
+        passwordEncryptor.setAlgorithm("SHA-1");
+        passwordEncryptor.setPlainDigest(true);
+        String userPassword = passwordEncryptor.encryptPassword(inputPassword);
+        String encryptedPassword = "JDaXxXRt6DWsb9esv0maK/8QbME=";
+        if (userPassword.equals(encryptedPassword)){
             try {
                 Desktop.getDesktop().open(new File(drive + ":\\Main"));
             } catch (IOException ex) {
