@@ -127,8 +127,10 @@ public class Window extends javax.swing.JFrame {
             try {
                 Desktop.getDesktop().open(new File(drive + ":\\Main"));
             } catch (IOException ex) {
-                Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Incorrect drive!", "Error", JOptionPane.INFORMATION_MESSAGE);
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Incorrect password!", "Error", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_LogInActionPerformed
 
