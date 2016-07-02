@@ -134,8 +134,9 @@ public class Window extends javax.swing.JFrame {
         if (userPassword.equals(encryptedPassword)){
             try {
                 Desktop.getDesktop().open(new File(drive + ":\\Main"));
-            } catch (IOException ex) {
-                Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Incorrect drive letter!", "Error", JOptionPane.INFORMATION_MESSAGE);
+                Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, e);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Incorrect password!", "Error", JOptionPane.INFORMATION_MESSAGE);
