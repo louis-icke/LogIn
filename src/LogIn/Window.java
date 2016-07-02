@@ -129,7 +129,8 @@ public class Window extends javax.swing.JFrame {
         passwordEncryptor.setAlgorithm("SHA-1");
         passwordEncryptor.setPlainDigest(true);
         String userPassword = passwordEncryptor.encryptPassword(inputPassword);
-        String encryptedPassword = "JDaXxXRt6DWsb9esv0maK/8QbME=";
+        //PASSWORD STORED BELOW
+        String encryptedPassword = "W6ph5Mm5Pz8GgiULbPgzG37mj9g=";
         if (userPassword.equals(encryptedPassword)){
             try {
                 Desktop.getDesktop().open(new File(drive + ":\\Main"));
