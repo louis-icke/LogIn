@@ -1,5 +1,5 @@
 # LogIn
-A simple USB password barrier.
+### A simple USB password barrier.
 ![It should look somewhat like this](https://snag.gy/av9mRn.jpg)
 ### How Do I Use This Program?
 To use, simply, enter in the drive letter of the USB device and the correct password; click 'Log In' and the folder containing all your files will pop up!
