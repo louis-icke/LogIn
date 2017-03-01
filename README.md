@@ -14,9 +14,3 @@ By default the password is 'password', if you want to change it you need to, fir
 Then open up the 'Encryption.jar' in the 'Encryption' folder; type your password into the text field and hit Encrypt once.  Your password will be replaced with an long line of numbers, letters, and symbols; copy this and replace W6ph5Mm5Pz8GgiULbPgzG37mj9g= (located between the "s on line 133) with it. Save and Build the project, and a version of the LogIn program with your new password will be located in the 'dist' folder.
 
 The source for the Encryption program is [HERE](https://github.com/Snowball2047/Encryption)
-
-### Disclaimer!
-This program is quite easy to bypass with a bit of know how (showing both hidden and important system folders will reveal the 'Main' folder). This program more useful as a deterrent, rather than a blown way to protect your data. If you want to fully protect your data; consider investing in a paid USB protector, rather than a Java program that was made over a weekend.
-
-### License
-The license for LogIn is available [HERE](https://github.com/Snowball2047/LogIn/blob/master/LICENSE.md)
